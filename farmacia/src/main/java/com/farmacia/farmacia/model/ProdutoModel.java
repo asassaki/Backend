@@ -25,7 +25,6 @@ public class ProdutoModel {
 	@JsonIgnoreProperties("produto")
 	private CategoriaModel categoria;
 
-	
 	public Long getId() {
 		return id;
 	}
@@ -41,7 +40,7 @@ public class ProdutoModel {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
+
 	public CategoriaModel getCategoria() {
 		return categoria;
 	}
@@ -49,15 +48,6 @@ public class ProdutoModel {
 	public void setCategoria(CategoriaModel categoria) {
 		this.categoria = categoria;
 	}
-
-	public CategoriaModel getCategoriaModel() {
-		return categoria;
-	}
-	
-	public void setCategoriaModel(CategoriaModel categoria) {
-		this.categoria = categoria;
-	}
-		
 	
 	
 }

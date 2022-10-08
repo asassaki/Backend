@@ -55,7 +55,7 @@ public class ProdutoController {
 	
 	@PostMapping
 	public ResponseEntity<ProdutoModel> post(@Valid @RequestBody ProdutoModel produto){
-		if (categoriaRepository.existsById(produto.getCategoriaModel().getId()))
+		if (categoriaRepository.existsById(produto.getCategoria().getId()))
 			return ResponseEntity.status(HttpStatus.CREATED)
 				.body(produtoRepository.save(produto));
 		
@@ -66,7 +66,7 @@ public class ProdutoController {
 	public ResponseEntity<ProdutoModel> put(@Valid @RequestBody ProdutoModel produto){
 		if (produtoRepository.existsById(produto.getId())) {
 			
-			if(categoriaRepository.existsById(produto.getCategoriaModel().getId()))
+			if(categoriaRepository.existsById(produto.getCategoria().getId()))
 				return ResponseEntity.status(HttpStatus.OK)
 						.body(produtoRepository.save(produto));
 			
