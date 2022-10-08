@@ -69,24 +69,12 @@ public class ProdutoController {
 			if(categoriaRepository.existsById(produto.getCategoriaModel().getId()))
 				return ResponseEntity.status(HttpStatus.OK)
 						.body(produtoRepository.save(produto));
+			
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 		}
 		
-		return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
-	
-	/*@PostMapping
-	public ResponseEntity<ProdutoModel> post(@Valid @RequestBody ProdutoModel produto){
-		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(produtoRepository.save(produto));
-	}
-	
-	@PutMapping
-	public ResponseEntity<ProdutoModel> put(@Valid @RequestBody ProdutoModel produto){
-		return produtoRepository.findById(produto.getId())
-				.map(resposta -> ResponseEntity.status(HttpStatus.CREATED)
-				.body(produtoRepository.save(produto)))
-				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
-	}*/
 	
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	@DeleteMapping("/{id}")

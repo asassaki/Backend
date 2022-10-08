@@ -68,6 +68,10 @@ public class CategoriaModel {
 	public void setCategoria(List<ProdutoModel> produto) {
 		this.produto = produto;
 	}
+
+	public void setProduto(List<ProdutoModel> produto) {
+		this.produto = produto;
+	}
 	
 	
 }

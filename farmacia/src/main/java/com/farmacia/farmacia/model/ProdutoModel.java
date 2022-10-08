@@ -42,6 +42,14 @@ public class ProdutoModel {
 		this.descricao = descricao;
 	}
 	
+	public CategoriaModel getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(CategoriaModel categoria) {
+		this.categoria = categoria;
+	}
+
 	public CategoriaModel getCategoriaModel() {
 		return categoria;
 	}
